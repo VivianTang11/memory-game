@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Merriweather", serif;
+}
+body {
+  font-size: 1em;
+  text-align: center;
+  color: whitesmoke;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(1, 1, 1);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 1, 1, 1) 0%,
+    rgb(64, 114, 200) 50%,
+    rgba(1, 1, 1, 1) 100%
+  );
+}
+
+header, main{
+  padding: 1rem;
+}
+
+.game {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.31);
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+.data {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0.5rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  position: absolute;
+
+  background: rgb(1, 1, 1);
+  background: radial-gradient(
+    circle,
+    rgba(1, 1, 1, 1) 0%,
+    rgba(43, 46, 51, 1) 54%,
+    rgba(1, 1, 1, 1) 100%
+  );
+}
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0.2s;
+}
+
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+
+.playagain-btn {
+  padding: 0.8em 1.8em;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  background-color: #ff1f1f;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: whitesmoke;
+}
+.playagain-btn::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #fbd743;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.playagain-btn:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: #111;
+}
+
+.reset-btn {
+  margin: 0.5rem;
+  border: none;
+  background: transparent;
+  color: yellow;
+  font-weight: bold;
+  font-size: larger;
+}
+.reset-btn:hover {
+  cursor: pointer;
+  color: rgb(171, 27, 27);
+  transform: scale(1.2);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content > h2,
+.modal-content > p {
+  margin-bottom: 1rem;
+}
