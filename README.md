@@ -2,6 +2,6 @@
 
 Memory game: Theme Pokemon
 
-Link: https://viviantang11.github.io/memory-game/
+Link: https://viviantang92.github.io/memory-game/
 
 ![](./src/screenshot.png)
