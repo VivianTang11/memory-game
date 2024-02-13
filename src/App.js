@@ -5,12 +5,12 @@ import SingleCard from "./Components/SingleCard";
 import Modal from "./Components/Modal";
 
 const cardImages = [
-  { src: "./img/pokemon1.png", matched: false },
-  { src: "./img/pokemon2.png", matched: false },
-  { src: "./img/pokemon3.png", matched: false },
-  { src: "./img/pokemon4.png", matched: false },
-  { src: "./img/pokemon5.png", matched: false },
-  { src: "./img/pokemon6.png", matched: false },
+  { src: "./memory-game/img/pokemon1.png", matched: false },
+  { src: "./memory-game/img/pokemon2.png", matched: false },
+  { src: "./memory-game/img/pokemon3.png", matched: false },
+  { src: "./memory-game/img/pokemon4.png", matched: false },
+  { src: "./memory-game/img/pokemon5.png", matched: false },
+  { src: "./memory-game/img/pokemon6.png", matched: false },
 ];
 
 function App() {
@@ -116,12 +116,26 @@ function App() {
         </div>
       </main>
       {pairs === cardImages.length ? (
-        <Modal shuffleCards={shuffleCards}>Congratulations!</Modal>
+        <Modal
+          shuffleCards={shuffleCards}
+          turns={turns}
+          pairs={pairs}
+          cardImages={cardImages}
+        >
+          Congratulations!
+        </Modal>
       ) : (
         ""
       )}
       {counter === 0 ? (
-        <Modal shuffleCards={shuffleCards}>Time is up!</Modal>
+        <Modal
+          shuffleCards={shuffleCards}
+          turns={turns}
+          pairs={pairs}
+          cardImages={cardImages}
+        >
+          Time is up!
+        </Modal>
       ) : (
         ""
       )}
